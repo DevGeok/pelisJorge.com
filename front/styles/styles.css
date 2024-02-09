@@ -1,0 +1,52 @@
+.cardSize{
+    width: 19rem;
+}
+
+.navLink{
+    font-size: 1.4rem;
+}
+
+.brand{
+    font-size: 2rem;
+}
+
+.subtitulo{
+    font-size: 1.3rem;
+}
+
+body {
+    background-image: url('https://png.pngtree.com/background/20220731/original/pngtree-realistic-background-with-different-objects-for-shooting-and-watching-movies-and-picture-image_1895567.jpg');
+    background-size: cover; /* Esto hará que la imagen cubra todo el espacio disponible */
+    background-repeat: no-repeat; /* Esto evitará que la imagen se repita */
+    background-position: center center; /* Esto centrará la imagen en la página */
+  }
+
+  .bg-opaco-10{
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .bg-opaco-90{
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+ .text-claro{
+    color: aliceblue !important; 
+ }
+
+ .noSubrayado{
+ text-decoration: none !important;
+ color: #1d0750;
+ }
+
+ .noSubrayado:hover {
+    color: #1d0750 !important;
+    text-decoration: underline;
+}
+
+h5 {
+    font-size:1.1rem;
+}
+
+.shadowPersonal {
+    box-shadow: 0 2.5rem 3rem rgba(0,0,0,2.15)!important;
+}
