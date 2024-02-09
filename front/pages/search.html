@@ -40,12 +40,18 @@
 
 
     <div  class="container">
-      <div class="text-claro">
-        <span class="text-monospace subtitulo">Peliculas Recomendadas</span>
-      </div>
+      <form id="searchForm" class="container d-flex flex-wrap justify-content-center">
+        <input name="titleWanted" class="form-control mr-sm-2 cardSize" type="text" placeholder="Ingrese título de busqueda">
+        <button id="searchButton" class="btn btn-outline-light my-2 my-sm-0">SEARCH</button>
+        <div>
+          <button id="lastPage" class="ml-2 btn btn-outline-light my-2 my-sm-0 d-none"><--</button>
+          <button id="nextPage" class="ml-2 btn btn-outline-light my-2 my-sm-0 d-none">--></button>
+        </div>
+      </form>
+   
       <div id="cardsContainer" class="container rounded shadowPersonal p-4 mb-5 bg-opaco-10 rounded mt-2 d-flex  flex-wrap justify-content-center" >
-
       </div>
+
     </div>
     <script src="../scripts/search.js"></script>
   </body>
