@@ -15,20 +15,3 @@ export let page=1;
 
 const button = document.getElementById("searchButton");
 button.addEventListener("click",searchMovies);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

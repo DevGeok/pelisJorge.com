@@ -1,4 +1,5 @@
 import { renderCards } from "./renderCards.js";
+import { movieCardToHTML } from "./movieCardToHtml.js";
 
 // Función dedicada a la validación de searchTitle
 function isValidSearchTitle(searchTitle) {
@@ -16,7 +17,7 @@ export function getMovies(searchTitle, page) {
 
   $.get(url).done((data) => {
     if (data.Response === "True") {
-      renderCards(data.Search);
+      renderCards(data.Search, movieCardToHTML);
     } else {
       console.error('Error obteniendo movies:', data.Error);
     }

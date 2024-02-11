@@ -12,3 +12,4 @@ export function searchMovies(event){
     getMovies(searchTitle,page);
     lastPage.classList.add("d-none");
   }
+

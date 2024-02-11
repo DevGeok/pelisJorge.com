@@ -3,8 +3,8 @@ const path = require('path');
 module.exports = {
   // Define múltiples puntos de entrada
   entry: {
-    search: './scripts/searchPage/searchIndex.js', // El punto de entrada para la página principal
-    //search: './scripts/search.js' // El punto de entrada para la página de búsqueda
+    index: './scripts/index/index.js', // El punto de entrada para la página principal
+    search: './scripts/searchPage/searchIndex.js'  // El punto de entrada para la página de búsqueda
   },
   output: {
     path: path.resolve(__dirname, 'public'), // La carpeta de salida para todos los bundles
