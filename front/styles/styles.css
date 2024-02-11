@@ -16,8 +16,8 @@
 
 body {
     background-image: url('https://png.pngtree.com/background/20220731/original/pngtree-realistic-background-with-different-objects-for-shooting-and-watching-movies-and-picture-image_1895567.jpg');
-    /* background-size: cover; Esto hará que la imagen cubra todo el espacio disponible */
-    /* background-repeat: no-repeat; Esto evitará que la imagen se repita */
+    background-size: cover; /*Esto hará que la imagen cubra todo el espacio disponible */
+    background-repeat: no-repeat; /*Esto evitará que la imagen se repita */
     background-position: center center; /* Esto centrará la imagen en la página */
   }
 
