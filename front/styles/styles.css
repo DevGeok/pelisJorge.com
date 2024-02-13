@@ -70,3 +70,25 @@ h5 {
   overflow-y: auto;
   padding: 10px;
 }
+
+.btn-link{
+   padding-left: 0.2rem;
+   padding-right: 0;
+}
+
+.close{
+    background-color: rgba(253, 68, 68, 0.6) !important;
+    
+    padding-top: 0rem !important;
+    margin-top: 0rem !important;
+    position:absolute; 
+    right:10px !important; 
+    top:10px !important; 
+    color: white;
+    width: 1.5rem;
+    height: 1.5rem;
+    align-self: center;
+    justify-self: center;
+    align-content: center;
+    justify-content:center;
+}
