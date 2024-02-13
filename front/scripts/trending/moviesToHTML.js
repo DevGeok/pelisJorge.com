@@ -1,3 +1,5 @@
+let requests = 1;
+
 export function moviesToHTML(movies) {
     let movieHTML = document.createElement("section");
     movieHTML.classList.add(
@@ -19,7 +21,7 @@ export function moviesToHTML(movies) {
     let sinopsisDiv = `<div class="sinopsis">${movies.overview}</div>`;
   
     // Botón para ver el trailer que abrirá el modal
-    let videoButtonHTML = `<button type="button" class="btn btn-link video-btn noSubrayado text-monospace" data-toggle="modal" data-target="#videoModal" data-thevideo=""><strong>CLICK AQUÍ</strong></button>`;
+    let videoButtonHTML = `<button type="button" class="btn btn-link video-btn noSubrayado text-monospace" data-toggle="modal" data-target="#videoModal" data-movieid="${movies.id}"><strong>CLICK AQUÍ</strong></button>`;
   
     // Comenzar a construir el HTML de la tarjeta
     movieHTML.innerHTML = `
@@ -47,27 +49,5 @@ export function moviesToHTML(movies) {
     });
   
     // Realizar llamada AJAX para obtener el ID del video de YouTube
-    $.ajax({
-      url: `https://api.themoviedb.org/3/movie/${movies.id}/videos?language=es-US`,
-      method: "GET",
-      headers: {
-        "accept": "application/json",
-        "Authorization" : 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNzI5MDJjOTNhM2EzZjc1MmNiYzQ1MzMzMDU1M2U4YyIsInN1YiI6IjY1Y2EyZWFjNDM1MDExMDE4M2ViMWYxZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.eYiUyh8VEHIV-uN868CbUPFSM_O3I3hOhRjMjtemKTE'
-  },
-      success: function(data) {
-        if (data && data.results && data.results.length > 0) {
-          // Suponemos que el trailer está en la primera posición
-          const youtubeId = data.results[0].key;
-          const videoUrl = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
-  
-          // Encuentra el botón que acabas de crear y actualiza el atributo data-thevideo
-          movieHTML.querySelector('.video-btn').setAttribute('data-thevideo', videoUrl);
-        }
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-        console.error(`Error al obtener el video debido a: ${textStatus}`, errorThrown);
-      }
-    });
-  
     return movieHTML;
   }
