@@ -1,7 +1,7 @@
 import { renderCards } from "../searchPage/renderCards.js";
 import {moviesToHTML} from "./moviesToHTML.js";
 
-export function getMovies(searchTitle, page) {
+export function getMovies() {
   const url = "https://students-api.2.us-1.fl0.io/movies";
 
   $.get(url).done((data) => {

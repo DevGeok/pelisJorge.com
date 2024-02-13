@@ -2,7 +2,7 @@
 
 export function moviesToHTML(movies){
         let  movieHTML = document.createElement("section");
-        movieHTML.classList.add ("card", "cardSize","shadow-lg", "p-3", "mx-4", "rounded","bg-opaco-90", "my-2"); 
+        movieHTML.classList.add("card", "cardSize", "shadow-lg", "p-1", "mx-2", "rounded", "bg-opaco-90", "my-4", "position-relative");
         let generos = movies.genre.join(" ");
         movieHTML.innerHTML =      //Agrego template
         `
