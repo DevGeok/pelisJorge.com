@@ -14,7 +14,8 @@ export function setupModalHandler() {
           },
           success: function(data) {
             if (data && data.results && data.results.length > 0) {
-              const youtubeId = data.results[0].key;
+                console.log("Hola mundo");
+              const youtubeId = data.results[buscaTrailer(data.results)].key;
               const videoUrl = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
               // Establecer la URL en el iframe dentro del modal
               $('#videoModal iframe').attr('src', videoUrl);
@@ -33,4 +34,11 @@ export function setupModalHandler() {
         $('#videoModal iframe').attr('src', '');
       });
     });
+  }
+
+
+function buscaTrailer(arreglo) {
+    let index =  arreglo.findIndex(objeto => objeto.type === "Trailer");
+    console.log("Este es el index", index);
+    if (index !== -1) return index; else return 0;
   }
