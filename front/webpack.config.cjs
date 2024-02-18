@@ -11,5 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, 'public'), // La carpeta de salida para todos los bundles
     filename: '[name].js' // Usar la sustitución de nombre para generar nombres de archivo basados en los nombres de entrada
   },
+  mode: "development",
   // ... el resto de tu configuración de Webpack
+  devtool: 'eval-source-map',
 };

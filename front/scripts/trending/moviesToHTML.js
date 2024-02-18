@@ -1,5 +1,3 @@
-let requests = 1;
-
 export function moviesToHTML(movies) {
     let movieHTML = document.createElement("section");
     movieHTML.classList.add(
@@ -51,3 +49,5 @@ export function moviesToHTML(movies) {
     // Realizar llamada AJAX para obtener el ID del video de YouTube
     return movieHTML;
   }
+
+  

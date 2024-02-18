@@ -1,4 +1,4 @@
-import { getMovies } from "./getMovies"
+import { getMovies } from "./getMovies.js"
 
 document.addEventListener('DOMContentLoaded',getMovies)
 

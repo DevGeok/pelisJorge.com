@@ -5,7 +5,7 @@ export let page = 1; // Variable de página definida globalmente
     
 export function getMovies() {
   $.ajax({
-      url: `https://api.themoviedb.org/3/trending/movie/week?language=es-US&page=${page}`,
+      url: `https://api.themoviedb.org/3/trending/movie/day?language=es-US&page=${page}`,
       method: "GET",
       headers: {
           "accept": "application/json",
