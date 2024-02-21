@@ -7,7 +7,7 @@ import { getMovies } from "./getMovies.js";
 
 export function searchMovies(event){
     event.preventDefault();
-    searchTitle = document.querySelector('[name="titleWanted"]').value 
+    searchTitle = document.querySelector('[name="titleWanted"]').value;
     if (searchTitle !=="") nextPage.classList.remove("d-none");
     getMovies(searchTitle,page);
     lastPage.classList.add("d-none");
