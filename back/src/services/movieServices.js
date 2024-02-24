@@ -1,4 +1,5 @@
 const tempData = require("../tempData");
+const axios = require("axios");
 
 class Movie{
    constructor(title, year, director, duration, genre, rate, poster){
@@ -17,19 +18,38 @@ class Movie{
 
 };
 
+const url=  "https://students-api.2.us-1.fl0.io/moves";
 
+async function getRepoFromApp(){
+            let repository = [];
+            try {
+              const res = await axios(url);
+              const newData = res.data;
+              console.log(newData);
+              newData.forEach((movie) => {
+                const newMovie = new Movie(movie.title, movie.year, movie.director, movie.duration, movie.genre, movie.rate, movie.poster);
+                repository.push(newMovie);
+                if(newMovie.error !== undefined) throw Error("Algo pasa con tu App pecueca");
+              });
+                return repository;
+            } catch (error) {
+              throw Error ("Algo pasa con tu App pecueca en service");
+            }
+     }   
 
 module.exports = {
-    getMovies: () => {
+    getRepoFromLocal: () => {  console.log("Hola");
         
             let repository = [];
-            tempData.forEach((movie) => {
-                const newMovie = new Movie(movie.title, movie.year, movie.director, movie.duration, movie.genre, movie.rate, movie.poster);
+           tempData.forEach((movie) => {
+                const newMovie = new Movie(movie.title, zmovie.year, movie.director, movie.duration, movie.genre, movie.rate, movie.poster);
                 repository.push(newMovie);
                 if(newMovie.error !== undefined) throw Error("Faltan datos en esta movie, sorry 4U");
                 });
                 return repository;
-        },     
+        }, 
+        
+        getRepoFromApp
     }
 
 

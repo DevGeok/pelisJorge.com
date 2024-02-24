@@ -1,6 +1,6 @@
 const tempData = [
     {
-    "title": 5,
+    "title": "hola",
     "year": 2017,
     "director": "James Gunn",
     "duration": "2h 16min",
