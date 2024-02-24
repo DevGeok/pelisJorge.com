@@ -1,17 +1,16 @@
 const path = require('path');
 
 module.exports = {
-  // Define múltiples puntos de entrada
   entry: {
-    index: './scripts/index/index.js', // El punto de entrada para la página principal
-    search: './scripts/searchPage/searchIndex.js',  // El punto de entrada para la página de búsqueda
-    trending: './scripts/trending/trendingIndex.js' // El punto de entrada para la página de trending
+    index: './scripts/index/index.js',
+    search: './scripts/searchPage/searchIndex.js',
+    trending: './scripts/trending/trendingIndex.js'
   },
   output: {
-    path: path.resolve(__dirname, 'public'), // La carpeta de salida para todos los bundles
-    filename: '[name].js' // Usar la sustitución de nombre para generar nombres de archivo basados en los nombres de entrada
+    path: path.resolve(__dirname, 'public'),
+    filename: '[name].js'
   },
-  mode: "development",
-  // ... el resto de tu configuración de Webpack
-  //devtool: 'eval-source-map',
+  mode: "development", // Change to "production" when ready to deploy
+  devtool: 'eval-source-map',
+  // ... the rest of your webpack configuration
 };
