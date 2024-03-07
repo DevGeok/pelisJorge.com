@@ -1,6 +1,6 @@
 const tempData = [
     {
-    "title": "hola",
+    "title": "Guardians of the Galaxy Vol. 2",
     "year": 2017,
     "director": "James Gunn",
     "duration": "2h 16min",

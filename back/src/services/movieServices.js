@@ -1,5 +1,6 @@
 const tempData = require("../tempData");
 const axios = require("axios");
+const Movies = require("../models/Movies")
 
 class Movie{
    constructor(title, year, director, duration, genre, rate, poster){
@@ -49,8 +50,13 @@ module.exports = {
                 return repository;
         }, 
         
-        getRepoFromApp
-    }
+        getRepoFromApp,
 
+        getRepoFromMongo: async () => {
+          const movies = await Movies.find({title: { $regex: 'star', $options: 'i' }})
 
+           return movies; 
+    },
+
+  }
 
