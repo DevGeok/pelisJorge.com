@@ -54,5 +54,14 @@ module.exports = {
       throw Error(`Hubo problemas al tratar de obtener el Repo de la DB, ${error}`);
     }
   },
+
+  addMovieToRepo: async (newMovie) => {
+    try {
+      const movieAdded = Movies.create(newMovie);
+      return movieAdded;      
+    } catch (err) {
+      throw Error (err)
+    };
+  }
 };
 
