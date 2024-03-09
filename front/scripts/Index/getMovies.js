@@ -10,7 +10,7 @@ try {
   if (Array.isArray(response.data) === true)
     renderCards(response.data, moviesToHTML);
 } catch(error) {
-  console.log("La api  de soyHenry no funcionó por el error:", error.message); 
+  console.log("La api no funcionó por el error:", error.message); 
   renderCards(tempData, moviesToHTML)
 }
 }
