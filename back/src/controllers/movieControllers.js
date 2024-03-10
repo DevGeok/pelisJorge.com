@@ -4,8 +4,7 @@ const movieServices = require("../services/movieServices")
 module.exports = {
   getMovies : async (req, res) => {
     try {
-      res.status(200).json(await movieServices.getRepoFromMongo());
-      console.log("Sí se pudo!");
+      res.status(200).send(await movieServices.getRepoFromMongo());
     } catch (error) {
       res.status(500).statusMessage = `No se pudo obtener las movies, ${error}`;
       res.status(500).send();
@@ -19,7 +18,7 @@ module.exports = {
       
       // Si todo salió correctamente enviar mensaje descriptivo al cliente con el status 201. 
       res.status(201).json({
-        message: "Pelicula agregada exitosamente",
+        message: `Pelicula "${newMovie.title}" agregada exitosamente`,
         movie: movieAdded
       });
     } catch (error) {

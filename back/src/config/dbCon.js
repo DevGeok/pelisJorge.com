@@ -7,7 +7,7 @@ const uriPruebas = process.env.MIMONGOPRUEBAS
 const dbCon = async () => {
     //Realiza conexión con la base de datosç
     await mongoose.connect(
-      uriPruebas
+      miUri
     )
 };
 

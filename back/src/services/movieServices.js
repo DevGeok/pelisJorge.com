@@ -47,8 +47,8 @@ module.exports = {
 
   getRepoFromMongo: async () => {
     try {
-      let repository = [];
-      const movies = await Movies.find(/*{title: { $regex: 'star', $options: 'i' }}*/);
+      
+      const movies = await Movies.find();
       return instanceMovies(movies)
     } catch (error) {
       throw Error(`Hubo problemas al tratar de obtener el Repo de la DB, ${error}`);
