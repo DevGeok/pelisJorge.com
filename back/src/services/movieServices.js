@@ -47,7 +47,6 @@ module.exports = {
 
   getRepoFromMongo: async () => {
     try {
-      
       const movies = await Movies.find();
       return instanceMovies(movies)
     } catch (error) {

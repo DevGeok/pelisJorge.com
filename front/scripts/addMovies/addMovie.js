@@ -12,10 +12,12 @@ export async function addMovie(){
      try {
       const answer = await axios.post(url, newMovie)
       console.log(answer.data);
-      confirm(`Mensaje del BackEnd: ${answer.data.message}`);
+      alert(`Mensaje del BackEnd: ${answer.data.message}`);
      } catch (error) {
       console.log(error);
-      confirm(`Hubo problemas al intentar agregar la movie, ${error.response.data.message}`);
+      if(error.response)
+      alert(`Hubo problemas al intentar agregar la movie, ${error.response.data.message}`);
+      else alert(`Hubo problemas al intentar agregar la movie, ${error.message}`);
      }
     }
 };

@@ -1,29 +1,29 @@
-const movieServices = require("../services/movieServices")
+const movieServices = require("../services/movieServices");
+const {catchAsync} = require("../utils/catchAsync");
 
+
+const getMovies = async (req, res) => {
+  res.status(200).send(await movieServices.getRepoFromMongo());
+
+}; 
+
+const addMovieToRepo = async (req, res) => {
+
+  console.log("Entre");
+  const newMovie = req.body;
+  const movieAdded = await movieServices.addMovieToRepo(newMovie);
+  
+  // Si todo salió correctamente enviar mensaje descriptivo al cliente con el status 201. 
+  res.status(201).json({
+    message: `Pelicula "${newMovie.title}" agregada exitosamente`,
+    movie: movieAdded
+  });
+};
 
 module.exports = {
-  getMovies : async (req, res) => {
-    try {
-      res.status(200).send(await movieServices.getRepoFromMongo());
-    } catch (error) {
-      res.status(500).statusMessage = `No se pudo obtener las movies, ${error}`;
-      res.status(500).send();
-    };
-  }, 
   
-  addMovieToRepo : async (req, res) => {
-    try {
-      const newMovie = req.body;
-      const movieAdded = await movieServices.addMovieToRepo(newMovie);
-      
-      // Si todo salió correctamente enviar mensaje descriptivo al cliente con el status 201. 
-      res.status(201).json({
-        message: `Pelicula "${newMovie.title}" agregada exitosamente`,
-        movie: movieAdded
-      });
-    } catch (error) {
-      res.status(500).statusMessage = `No se pudo agregar las movies, ${error}`;
-      res.status(500).send();
-    };
-  },
+  getMovies : catchAsync(getMovies),
+  
+  addMovieToRepo: catchAsync(addMovieToRepo),
+
 };
