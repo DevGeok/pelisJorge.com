@@ -12,6 +12,6 @@ module.exports = {
     filename: '[name].js'
   },
   //mode: "development", // Change to "production" when ready to deploy
-  devtool: 'eval-source-map',
+ // devtool: 'eval-source-map',
   // ... the rest of your webpack configuration
 };
